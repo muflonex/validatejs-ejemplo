@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/moment.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form id="formulario-servicio" name="formulario-servicio" novalidate>
+      <div class="fieldset">
+        <legend>Datos del cliente</legend>
+        <div class="form-row">
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="cif">CIF:</label>
+            <input class="form-control" type="text" name="cif" id="cif">
+            <small class="form-text text-muted">Requerido. Una letra capital seguida de 8 cifras</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="nombre-cliente">Nombre:</label>
+            <input class="form-control" type="text" name="nombre-cliente" id="nombre-cliente">
+            <small class="form-text text-muted">Requerido. Mínimo 3 letras</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="nombre-empresa">Nombre de empresa:</label>
+            <input class="form-control" type="text" name="nombre-empresa" id="nombre-empresa">
+            <small class="form-text text-muted">Requerido. Mínimo 3 letras</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="direccion">Dirección:</label>
+            <input class="form-control" type="text" name="direccion" id="direccion">
+            <small class="form-text text-muted">Requerido. Mínimo 10 carácteres</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="email">E-mail:</label>
+            <input class="form-control" type="email" name="email" id="email">
+            <small class="form-text text-muted">Requerido. Patrón: nombre@dominio.com</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="telefono">Teléfono:</label>
+            <input class="form-control" type="tel" name="telefono" id="telefono">
+            <small class="form-text text-muted">Requerido. 9-13 cifras, ejemplo: 0034615412321 o 615412321</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fieldset">
+        <legend>Datos del coche</legend>
+        <div class="form-row">
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="fecha-entrada">Fecha entrada:</label>
+            <input class="form-control" type="date" name="fecha-entrada" id="fecha-entrada">
+            <small class="form-text text-muted">Requerido</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="marca">Marca: </label>
+            <input class="form-control" type="text" name="marca" id="marca">
+            <small class="form-text text-muted">Requerido. Mínimo 3 letras</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="modelo">Modelo:</label>
+            <input class="form-control" type="text" name="modelo" id="modelo">
+            <small class="form-text text-muted">Requerido. Mínimo 3 letras</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-3">
+            <label for="matricula">Matrícula:</label>
+            <input class="form-control" type="text" name="matricula" id="matricula">
+            <small class="form-text text-muted">Requerido. Patrón MU1111AB o E1111ABC</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="motorizacion">Motorización:</label>
+          <div class="form-row">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="motorizacion" id="gasolina" value="gasolina" checked>
+              <label class="form-check-label" for="gasolina">Gasolina</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="motorizacion" id="diesel" value="diesel">
+              <label class="form-check-label" for="diesel">Diesel</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="motorizacion" id="hibrido" value="hibrido">
+              <label class="form-check-label" for="hibrido">Híbrido</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="motorizacion" id="electrico" value="electrico">
+              <label class="form-check-label" for="electrico">Eléctrico</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="motorizacion" id="glp" value="glp">
+              <label class="form-check-label" for="glp">GLP</label>
+            </div>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="potencia">Potencia:</label>
+            <input class="form-control" type="number" name="potencia" id="potencia">
+            <small class="form-text text-muted">Requerido. Mínimo - 78, máximo - 1973</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="num-puertas">Número de puertas:</label>
+            <input class="form-control" type="number" name="num-puertas" id="num-puertas">
+            <small class="form-text text-muted">Requerido. Mínimo - 1, máximo - 5</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 col-md-4">
+            <label for="tipo-carroceria">Tipo de tipo_carrocería</label>
+            <select class="form-control" name="tipo-carroceria" id="tipo-carroceria">
+              <option value="cupe" selected>Cupé</option>
+              <option value="camioneta">Camioneta</option>
+              <option value="deportivo">Deportivo</option>
+              <option value="familiar">Familiar</option>
+              <option value="hardtop">Hardtop</option>
+              <option value="limusina">Limusina</option>
+              <option value="sedan">Sedan</option>
+              <option value="todoterreno">Todoterreno</option>
+              <option value="tres_puertas">Tres puertas</option>
+              <option value="coche_funaaebre">Coche funebre</option>
+            </select>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="descripcion">Descripción de avería:</label>
+            <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+            <small class="form-text text-muted">Requerido. Mínimo 20 carácteres</small>
+            <div class="alert alert-danger" role="alert" style="display: none;">
+              <ul class="error-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Subir</button>
+    </form>
+  </div>
+  <div class="modal" id="modalRespuesta" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Datos a subir</h5>
+          <button type="button" class="close" aria-label="Close">
+            <span aria="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

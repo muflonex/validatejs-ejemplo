@@ -1,0 +1,91 @@
+body {
+    background: #e4e4e4;
+}
+
+form {
+    background: white;
+    margin: 1em auto;
+    padding: 1em;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+.hidden {
+    display: none !important;
+}
+.alert {
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 0.25em 0.75em;
+    border-radius: 0;
+    border: 0.5px dotted;
+}
+.alert .error-list {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.alert .error-list li::before {
+    content: '!';
+    display: inline-block; 
+    font-weight: 900;
+    margin-right: 5px;
+}
+.fieldset {
+    padding: 0.35em 0.75em 0.75em 0.625em;
+    border: 0.5px dashed #a4a4a4;
+    margin: 2em 0;
+}
+.fieldset:hover {
+    background: rgba(223, 233, 255, 0.514);
+    transition: all 0.1s ease-in-out;
+}
+legend {
+    position: relative;
+    top: -25px;
+    margin-bottom: -15px;
+    width: fit-content;
+    padding: 5px 10px;
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+}
+label {
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+small {
+    font-size: 0.65rem;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: unset;
+}
+textarea.form-control,
+input.form-control,
+select.form-control {
+    border: 0.5px solid #a4a4a4;
+    border-radius: 0;
+    padding: 0.25em 0.5em;
+    font-size: 0.75rem;
+}
+input.valid,
+textarea.valid {
+    border: 1px solid green;
+    color: green;
+    background: rgba(172, 255, 47, 0.25);
+}
+input.invalid,
+textarea.invalid {
+    border: 1px dashed rgb(238, 82, 82);
+    color: rgb(238, 82, 82);
+    background: rgba(245, 152, 141, 0.25);
+}
+.btn {
+    border-radius: 0;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 0.5em 2em;
+}
+.btn[type="submit"]{
+    align-self: flex-end;
+}
