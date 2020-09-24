@@ -1,2 +1,4 @@
 # validatejs-ejemplo
-Ejemplo de uso de validateJS
+Example of validateJS
+
+[Site](https://muflonex.github.io/validatejs-ejemplo/)
